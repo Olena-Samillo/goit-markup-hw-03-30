@@ -15,11 +15,50 @@
   --secondary-background-color-hero: #2f303a;
   --background-color-footer: #2f303a;
   --background-color-team: #f5f4fa;
+  --background-btn-color: #f5f4fa;
   --background-btn-hero: #2196f3;
   --background-color-portfolio-projects: #e5e5e5;
+  --background-projects-list: #ffffff;
 }
 
 /* ===================== COMPONENTS =========================== */
+/* ======================  минимальный сброс=================== */
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+/* ======================  минимальный сброс=================== */
 
 body {
   font-family: var(--main-font);
@@ -27,12 +66,14 @@ body {
   background-color: var(--main-background-color);
 }
 
-a {
-  text-decoration: none;
+
+
+.list {
+  list-style: none;
 }
 
-ul {
-  list-style: none;
+.link {
+  text-decoration: none;
 }
 
 .navigation-list .current {
@@ -40,7 +81,15 @@ ul {
 }
 /* ===================== HEADER =========================== */
 
+.header {
+  border: 1px solid #ECECEC;
+}
+
 .logo {
+  margin-right: 93px;
+  margin-top: 24px;
+  margin-bottom: 25px;
+
   font-family: var(--secondary-font);
   font-weight: bold;
   font-size: 26px;
@@ -53,6 +102,36 @@ ul {
   color: var(--primary-logo-color);
 }
 
+.header .container {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  
+}
+
+.navigation-header {
+  display: flex;
+  align-items: center;
+}
+.navigation-menu {
+  display: flex;
+  align-items: center;
+}
+
+.contacts-menu {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.header .contacts-list {
+  margin-right: 50px;
+}
+
+.header .navigation-list:not(:last-child) {
+  margin-right: 50px;
+}
+
 .navigation-link {
   font-family: var(--main-font);
   font-weight: 500;
@@ -62,6 +141,15 @@ ul {
   color: var(--primary-heading-color);
 }
 
+.contacts-link {
+  font-family: var(--main-font);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.142;
+  letter-spacing: 0.02em;
+  color: var(--primary-text-color);
+}
+
 .navigation-link:hover,
 .navigation-link:focus,
 .contacts-link:hover,
@@ -69,25 +157,32 @@ ul {
   color: var(--primary-active-color);
 }
 
-.contacts-link,
-a {
-  font-family: var(--main-font);
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.142;
-  letter-spacing: 0.02em;
-  color: var(--primary-text-color);
-  text-decoration: none;
-}
 /* ======================== END OF HEADER ===================================== */
 
 /* ===========================   HERO   ======================================= */
 
 .hero {
   background-color: var(--secondary-background-color-hero);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.heading-hero {
+  margin: auto;
+  font-family: var(--main-font);
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.363;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--white-color);
+  width: 696px;
 }
 
 .modal-btn-hero {
+  margin-top: ;
   font-family: var(--main-font);
   font-weight: bold;
   font-size: 16px;
@@ -97,21 +192,17 @@ a {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border: none;
+  text-align: center;
 }
 
-.heading-hero {
-  font-family: var(--main-font);
-  font-weight: 900;
-  font-size: 44px;
-  line-height: 1.363;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--white-color);
-}
 /* ===========================   END HERO   ======================================= */
 
 /* ===========================   ABOUT      ======================================= */
+
+/* .about .container {
+  padding-top: 94px;
+  padding-bottom: 94px;
+} */
 
 .about-header {
   font-family: var(--main-font);
@@ -121,6 +212,7 @@ a {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--primary-heading-color);
+  margin-bottom: 10px;
 }
 
 .about-description {
@@ -129,11 +221,32 @@ a {
   font-size: 14px;
   line-height: 1.714;
   letter-spacing: 0.03em;
+  width: 270px;
+}
+
+.about-list-menu {
+  display: flex;
+}
+
+.about-list:not(:last-child) {
+  margin-right: 30px;
 }
 /* ===========================  END  ABOUT      ======================================= */
 
 /* ===========================   WEDO    ======================================= */
 /* ===========================   TEAM    ======================================= */
+
+.wedo-list-menu {
+  display: flex;
+}
+.wedo-list:not(:last-child) {
+  margin-right: 30px;
+}
+
+.team-list-menu {
+  display: flex;
+  justify-content: space-between;
+}
 
 .wedo-header,
 .team-header {
@@ -145,6 +258,20 @@ a {
   letter-spacing: 0.03em;
   text-align: center;
   color: var(--primary-heading-color);
+  margin-bottom: 50px;
+}
+
+.team-list {
+  background: var(--main-background-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+  0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+
+.team-list-content {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
 }
 
 .team {
@@ -158,6 +285,7 @@ a {
   line-height: 1.187;
   letter-spacing: 0.03em;
   color: var(--primary-heading-color);
+  margin-bottom: 10px;
 }
 
 .team-description {
@@ -172,6 +300,10 @@ a {
 
 /* ===========================   FOOTER      ======================================= */
 
+address {
+  font-style: normal;
+  margin-top: 20px;
+}
 .footer-description {
   font-family: var(--main-font);
   font-weight: normal;
@@ -191,13 +323,15 @@ a {
 
 .footer {
   background-color: var(--background-color-footer);
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .address-footer {
   color: rgba(255, 255, 255, 0.6);
 }
-
-address {
-  font-style: normal;
+.address-list:not(:last-child) {
+  margin-bottom: 9px;
 }
-/* ===========================  END FOOTER    ======================================= */
+
+  .; /* ===========================  END FOOTER    ======================================= */
