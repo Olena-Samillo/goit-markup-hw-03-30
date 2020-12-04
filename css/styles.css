@@ -167,9 +167,10 @@ body {
   display: flex;
   justify-content: center;
   text-align: center;
-  min-height: 600px;
+  max-width: 1600px;
   padding-top: 200px;
   padding-bottom: 200px;
+  margin: 0 auto;
 }
 
 .heading-hero {

@@ -16,7 +16,7 @@
   outline: none;
 }
 
-.portfolio-btn:focus,
+.portfolio-btn:hover,
 .portfolio-btn:focus {
   background-color: var(--background-btn-hero);
   color: var(--white-color);
